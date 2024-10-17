@@ -10,9 +10,9 @@ const Hder = () => {
           <Image
             src="/images/LogoMemeorial.svg"
             alt="Logo Memeorial"
-            width={197}
-            height={29}
-            className="w-24 h-auto sm:w-32 md:w-40 lg:w-48 xl:w-56"
+            width={500}
+            height={40}
+            className="w-40 h-auto sm:w-32 md:w-40 lg:w-48 xl:w-56"
           />
         </Link>
       </div>
