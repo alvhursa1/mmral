@@ -1,5 +1,7 @@
+import Fter from '@/components/Fter';
 import Hder from '@/components/Hder';
 import HmeBnner from '@/components/Home/HmeBanner';
+import VerticalCarousel from '@/components/Home/VerticalCarousel';
 
 
 export default function Home() {
@@ -7,7 +9,10 @@ export default function Home() {
 
     <div>
           <Hder />
+          <div className='-z-10'>
           <HmeBnner />
+          </div>
+          <Fter />
     </div>
   );
 }

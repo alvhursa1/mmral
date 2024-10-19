@@ -1,21 +1,47 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import CustomTimeline from './CustomTimeline';
 import BasicTimeline from './BasicTimeline';
+import VerticalCarousel from './VerticalCarousel';
+import VerticalCarouseldown from './VerticalCarouselDown';
 
 const HmeBnner = () => {
+  const [isSticky, setIsSticky] = useState(false);
+  const leftColumnRef = useRef<HTMLDivElement>(null);
+  const rightColumnRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (leftColumnRef.current && rightColumnRef.current) {
+        const leftColumnBottom = leftColumnRef.current.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+
+        if (leftColumnBottom <= windowHeight && !isSticky) {
+          setIsSticky(true);
+        } else if (leftColumnBottom > windowHeight && isSticky) {
+          setIsSticky(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isSticky]);
+
   return (
-    <div className="flex flex-col md:flex-row w-full p-0 md:px-[5%] pb-[3%]">
+    <div className="flex flex-col md:flex-row w-full p-0 md:px-[5%] pb-[3%] relative">
       {/* Columna Izquierda */}
-      <div className="w-full md:w-1/2 p-5">
+      <div ref={leftColumnRef} className="w-full md:w-1/2 p-5">
         <div className="flex flex-col w-full pr-[10%]">
           <Image
             src="/images/PriceHistory.svg"
             alt="Price History"
-            layout="responsive"
             width={100}
             height={100}
+            layout="responsive"
             className="w-full"
           />
         </div>
@@ -34,9 +60,9 @@ const HmeBnner = () => {
             <Image
               src="/images/opensea.svg"
               alt="OpenSea Logo"
-              layout="fixed"
               width={175}
               height={77}
+              layout="fixed"
             />
           </div>
         </div>
@@ -48,17 +74,15 @@ const HmeBnner = () => {
           <Link href="/manifesto" className="block w-full py-6 text-center text-[1rem] font-satoshi-medium text-[#E515D7] bg-white border border-[#FF3E5A] rounded-full shadow-md transition-all duration-200 ease-in-out transform hover:bg-gradient-to-r hover:from-[#FF3E5A] hover:to-[#E515D7] hover:text-white hover:shadow-lg hover:scale-105">
             READ THE MANIFESTO
           </Link>
-
-
         </div>
         {/* Flex 4 para la imagen SVG */}
         <div className="flex w-full mt-5 md:mt-0 md:pt-[20%] justify-center md:justify-start py-[8%] md:py-0">
           <Image
             src="/images/().svg"
             alt="SVG Image"
-            layout="fixed"
             width={50}
             height={50}
+            layout="fixed"
             className="w-auto h-auto"
           />
         </div>
@@ -100,17 +124,17 @@ const HmeBnner = () => {
               Community-Driven
             </h2>
             <p className="font-satoshi-regular pt-4 text-[1rem] text-[#000] md:pl-[15%] text-justify">
-              Users can influence the platform’s direction by voting on future events using a native token.
+              Users can influence the platform's direction by voting on future events using a native token.
             </p>
           </div>
         </div>
-        <div className="md:flex mt-[25%]">
-        <Image
+        <div className="md:flex mt-[25%] -ml-2">
+          <Image
             src="/images/Roadmap.svg"
             alt="SVG Image"
-            layout="fixed"
             width={50}
             height={50}
+            layout="fixed"
             className="w-[50%] h-[50%]"
           />
         </div>
@@ -124,8 +148,13 @@ const HmeBnner = () => {
         </div>
       </div>
       {/* Columna Derecha */}
-      <div className="w-full md:w-1/2 p-5">
-        {/* Aquí puedes agregar contenido adicional para la columna derecha */}
+      <div 
+        ref={rightColumnRef}
+        className={`w-full md:w-1/2 p-5 md:fixed md:top-0 md:right-0 md:h-screen' : 'md:absolute md:h-full z-index-10'
+        }`}
+      >
+        <VerticalCarouseldown />  
+        <div className="h-screen"></div> {/* Spacer */}
       </div>
     </div>
   );
