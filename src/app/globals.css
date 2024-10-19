@@ -53,3 +53,7 @@ body {
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
+
+p {
+  line-height: 1.2;
+}

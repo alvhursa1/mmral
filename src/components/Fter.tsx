@@ -1,14 +1,14 @@
 "use client";
 
 import * as React from 'react';
-import { motion, useAnimation } from 'framer-motion'; // Para la animación
-import { useRef, useEffect, useState } from 'react';
+import { motion} from 'framer-motion'; // Para la animación
+import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image'; // Para cargar la imagen del logo y los iconos
 
 export default function Footer() {
   // useRef para rastrear el footer
-  const refFooter = useRef(null);
+
 
   // Estado para asegurarse de que la animación solo ocurra una vez
   const [hasBeenViewed, setHasBeenViewed] = useState(false);

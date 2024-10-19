@@ -2,31 +2,24 @@
 
 import React from 'react';
 import Image from 'next/image';
+import CustomTimeline from '../Home/CustomTimeline';
+import BasicTimeline from '../Home/BasicTimeline';
 import Link from 'next/link';
-import CustomTimeline from './CustomTimeline';
-import BasicTimeline from './BasicTimeline';
-import VerticalCarousel from './VerticalCarousel';
-import VerticalCarousel2 from './VerticalCarousel2';
-import ImageCarousel from './ImageCarousel';
 
-const HmeBnner = () => {
+const HmBnner = () => {
   return (
-    <div className="flex flex-col md:flex-row w-full p-0 md:px-[5%] pb-[3%] relative">
+    <div className="flex w-full p-0 relative">
       {/* Columna Izquierda */}
-      <div className="w-full md:w-1/2 py-8 pr-8">
-        <div className="flex flex-col w-full pr-[10%]">
+      <div className="w-full md:w-1/2 p-5 pl-[3%]">
+      <div className="flex flex-col w-full pr-[10%]">
           <Image
             src="/images/PriceHistory.svg"
             alt="Price History"
-            layout="responsive"
             width={100}
             height={100}
+            layout="responsive"
             className="w-full"
           />
-          {/* ImageCarousel visible solo en móviles */}
-          <div className="md:hidden mt-10">
-            <ImageCarousel />
-          </div>
         </div>
         <div className="flex flex-col md:flex-row mt-5">
           {/* Columna Izquierda del Flex Interno */}
@@ -43,9 +36,9 @@ const HmeBnner = () => {
             <Image
               src="/images/opensea.svg"
               alt="OpenSea Logo"
-              layout="fixed"
               width={175}
               height={77}
+              layout="fixed"
             />
           </div>
         </div>
@@ -63,9 +56,9 @@ const HmeBnner = () => {
           <Image
             src="/images/().svg"
             alt="SVG Image"
-            layout="fixed"
             width={50}
             height={50}
+            layout="fixed"
             className="w-auto h-auto"
           />
         </div>
@@ -107,20 +100,17 @@ const HmeBnner = () => {
               Community-Driven
             </h2>
             <p className="font-satoshi-regular pt-4 text-[1rem] text-[#000] md:pl-[15%] text-justify">
-              Users can influence the platform’s direction by voting on future events using a native token.
+              Users can influence the platform&apos;s direction by voting on future events using a native token.
             </p>
           </div>
         </div>
-        <div className="md:flex mt-[25%]">
-        <div className="md:hidden pt-10">
-            <ImageCarousel />
-          </div>
+        <div className="md:flex mt-[25%] -ml-2">
           <Image
             src="/images/Roadmap.svg"
             alt="SVG Image"
-            layout="fixed"
             width={50}
             height={50}
+            layout="fixed"
             className="w-[50%] h-[50%]"
           />
         </div>
@@ -133,16 +123,43 @@ const HmeBnner = () => {
           <BasicTimeline />
         </div>
       </div>
-      {/* Columna Derecha 1 */}
-      <div className="hidden md:block w-full md:w-1/4 md:sticky md:top-0 h-screen">
-        <VerticalCarousel />
+
+      {/* Columna Centro */}
+      <div className="w-full md:w-1/4 p-5">
+        <div className="flex flex-col w-full">
+          <Image
+            src="/images/CenterImage.svg"
+            alt="Center Image"
+            width={100}
+            height={100}
+            layout="responsive"
+            className="w-full"
+          />
+        </div>
       </div>
-      {/* Columna Derecha 2 */}
-      <div className="hidden md:block w-full md:w-1/4 md:sticky md:top-0 h-screen">
-        <VerticalCarousel2 />
+      {/* Columna Derecha */}
+      <div className="w-full md:w-1/4 p-5 pr-[3%]">
+        <div className="flex flex-col w-full">
+          <Image
+            src="/images/RightImage.svg"
+            alt="Right Image"
+            width={100}
+            height={100}
+            layout="responsive"
+            className="w-full"
+          />
+        </div>
+        <div className="flex flex-col mt-5">
+          <p className="font-satoshi-regular text-[1rem] text-justify mt-8">
+            <span className="font-satoshi-bold">Right Column Content</span> with some additional text here.
+            <br />
+            <br />
+            More content for the right column.
+          </p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default HmeBnner;
+export default HmBnner;

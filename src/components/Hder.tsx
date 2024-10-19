@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 const Hder = () => {
   return (
-    <header className="sticky top-0 w-full bg-white py-[2%] pl-[2%] flex items-center z-50 shadow-md">
-      <div className="pl-3">
+    <header className="sticky top-0 w-full bg-white py-[2%] pl-[5%] flex items-center z-50 shadow-md">
+      <div className="">
         <Link href="/">
           <Image
             src="/images/LogoMemeorial.svg"

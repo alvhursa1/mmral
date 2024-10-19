@@ -55,7 +55,7 @@ export default function VerticalCarousel() {
     y: [0, -100 * imageSet.length + "vh"],
     transition: {
       repeat: Infinity,
-      duration: 240,
+      duration: 360,
       ease: "linear",
     },
   };

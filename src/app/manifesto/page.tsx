@@ -1,6 +1,7 @@
 import Fter from '@/components/Fter';
 import Hder from '@/components/Hder';
-import HmeBnner from '@/components/Home/HmeBanner';
+import ManBnner from '@/components/manifesto/ManBnner';
+
 
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
     <div>
           <Hder />
           <div className='-z-10'>
-          <HmeBnner />
+    <ManBnner />
           </div>
           <Fter />
     </div>

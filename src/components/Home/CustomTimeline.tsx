@@ -74,7 +74,7 @@ export default function CustomTimeline() {
           </h2>
           <motion.p
             ref={ref1} // Referencia para rastrear
-            className="font-satoshi-regular pt-4 text-[1rem] text-[#000] md:pl-[5%] md:pr-[15%] text-justify"
+            className="font-satoshi-regular pt-4 text-[1rem] text-[#000]  text-justify"
             initial={{ opacity: 0, y: 20 }} // Estado inicial
             animate={hasBeenViewed1 ? { opacity: 1, y: 0 } : {}} // Animación solo si está en vista
             transition={{ duration: 1 }} // Duración de la animación
@@ -103,7 +103,7 @@ export default function CustomTimeline() {
           </h2>
           <motion.p
             ref={ref2}
-            className="font-satoshi-regular pt-4 text-[1rem] text-[#000] md:pl-[15%] text-justify"
+            className="font-satoshi-regular pt-4 text-[1rem] text-[#000] text-justify"
             initial={{ opacity: 0, y: 20 }}
             animate={hasBeenViewed2 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
@@ -132,7 +132,7 @@ export default function CustomTimeline() {
           </h2>
           <motion.p
             ref={ref3}
-            className="font-satoshi-regular pt-4 text-[1rem] text-[#000] md:pl-[5%] md:pr-[15%] text-justify"
+            className="font-satoshi-regular pt-4 text-[1rem] text-[#000] md:  text-justify"
             initial={{ opacity: 0, y: 20 }}
             animate={hasBeenViewed3 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
@@ -161,7 +161,7 @@ export default function CustomTimeline() {
           </h2>
           <motion.p
             ref={ref4}
-            className="font-satoshi-regular pt-4 text-[1rem] text-[#000] md:pl-[15%] text-justify"
+            className="font-satoshi-regular pt-4 text-[1rem] text-[#000]  text-justify"
             initial={{ opacity: 0, y: 20 }}
             animate={hasBeenViewed4 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
@@ -185,7 +185,7 @@ export default function CustomTimeline() {
           </h2>
           <motion.p
             ref={ref5}
-            className="font-satoshi-regular pt-4 text-[1rem] text-[#000] md:pl-[5%] md:pr-[15%] text-justify"
+            className="font-satoshi-regular pt-4 text-[1rem] text-[#000]  text-justify"
             initial={{ opacity: 0, y: 20 }}
             animate={hasBeenViewed5 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}

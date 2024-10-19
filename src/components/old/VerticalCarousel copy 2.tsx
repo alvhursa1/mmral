@@ -12,6 +12,7 @@ type ImageData = {
   link: string;
 };
 
+
 export default function VerticalCarousel() {
   const [imageSet, setImageSet] = useState<ImageData[]>([]);
   const [isPaused, setIsPaused] = useState(false);
@@ -55,7 +56,7 @@ export default function VerticalCarousel() {
     y: [0, -100 * imageSet.length + "vh"],
     transition: {
       repeat: Infinity,
-      duration: 240,
+      duration: 120,
       ease: "linear",
     },
   };
@@ -72,14 +73,11 @@ export default function VerticalCarousel() {
         animate={isPaused ? {} : animationSettings}
       >
         {imageSet.map((image, index) => (
-          <a key={image.id} href={image.link} className="relative w-full h-auto">
+          <a key={image.id} href={image.link} className="relative w-full h-screen">
             <Image
               src={image.src}
               alt={`image-${image.id}`}
-              layout="responsive"
-              width={100}
-              height={100}
-              objectFit="contain"
+              fill
               priority={index < 4} // Prioriza las primeras 4 imágenes
               quality={100}
             />
