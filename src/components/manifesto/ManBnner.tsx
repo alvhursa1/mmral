@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import AnimationComponent from './AnimatedComponent';
 
 const ManBnner = () => {
   return (
@@ -57,7 +58,7 @@ const ManBnner = () => {
         <div className="w-full md:w-1/5 p-4"></div>
       </div>
 
-      {/* Flex 4 */}
+      {/* Flex 3 */}
       <div className="flex flex-wrap w-full">
         {/* Columna 1 */}
         <div className="w-full md:w-1/5 p-4"></div>
@@ -98,7 +99,7 @@ const ManBnner = () => {
         </div>
       </div>
 
-     {/* Flex 3 */}
+     {/* Flex 4 */}
      <div className="flex flex-wrap w-full">
         {/* Columna 1 */}
         <div className="w-full md:w-1/5 p-4"></div>
@@ -132,10 +133,41 @@ These bite-sized, highly shareable pieces of media cater to shrinking attention 
         As users increasingly prefer to consume and share these compact, impactful content pieces, traditional media outlets struggle to compete with the immediacy, relatability, and virality of meme culture, leading to a shift in how information is disseminated and consumed in the digital age. Memes are distilled units of public discourse. 
             <br />
             <br />
-            <span className="font-satoshi-light text-[1rem]">And now people can own an NFT of a meme.</span>
+And now people can own an NFT of a meme.
           </p>
         </div>
       </div>
+
+     {/* Flex 5 */}
+     <div className="flex flex-wrap w-full">
+        {/* Columna 1 */}
+        <div className="w-full md:w-1/5 p-4"></div>
+        {/* Columna 2 */}
+        <div className="w-full md:w-1/5 p-4">
+        <span className="font-satoshi-bold text-[1.125rem]">But it’s just a silly pic?!</span>
+          <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+          Yes, but a pic is worth a 1000 words!
+            <br />
+            <br />
+            Decrease of attention span - increase of input bandwidth
+            <br />
+          </p>
+        </div>
+        {/* Columna 3 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 4 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 5 */}
+        <div className="w-full md:w-1/5 p-4 flex items-center justify-center">
+
+        </div>
+      </div>
+
+        <AnimationComponent />
 
     </div>
   );

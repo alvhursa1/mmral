@@ -2,17 +2,41 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Hder = () => {
+const Hder: React.FC = () => {
   return (
-    <header className="sticky top-0 w-full bg-white py-[2%] pl-[5%] flex items-center z-50 shadow-md">
-      <div className="">
-        <Link href="/">
+    <header className="
+      sticky top-0 w-full bg-white z-50 shadow-md
+      /* Altura del header - Mobile */
+      h-14
+      /* Altura del header - Desktop */
+      md:h-20
+    ">
+      <div className="
+        flex items-center  h-full 
+        /* Padding del contenedor - Mobile */
+        px-[8%]
+        /* Padding del contenedor - Desktop */
+        md:px-[5%]
+      ">
+        <Link href="/" className="
+          /* Tamaño del contenedor del logo - Mobile */
+          w-44 h-auto
+          /* Tamaño del contenedor del logo - Desktop */
+
+          /* Padding del logo - Mobile */
+          py-4
+          /* Padding del logo - Desktop */
+          md:py-3
+        ">
           <Image
             src="/images/LogoMemeorial.svg"
             alt="Logo Memeorial"
             width={500}
             height={40}
-            className="w-40 h-auto sm:w-32 md:w-40 lg:w-48 xl:w-56"
+            className="
+              w-full h-auto
+              object-contain
+            "
           />
         </Link>
       </div>

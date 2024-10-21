@@ -1,19 +1,20 @@
-"use client";
+'use client'
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import CustomTimeline from './CustomTimeline';
-import BasicTimeline from './BasicTimeline';
-import VerticalCarousel from './VerticalCarousel';
-import VerticalCarousel2 from './VerticalCarousel2';
-import ImageCarousel from './ImageCarousel';
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import CustomTimeline from './CustomTimeline'
+import BasicTimeline from './BasicTimeline'
+import ImgCarruselArrAbj from '../carrusel/ImgCarruselArrAbj'
+import ImgCarruselAbjArr from '../carrusel/ImgCarruselAbjArr'
+import ImgCarruselDerIzq from '../carrusel/ImgCarruselDerIzq'
+import ImgCarruselIzqDer from '../carrusel/ImgCarruselIzqDer'
 
-const HmeBnner = () => {
+export default function HmeBnner() {
   return (
     <div className="flex flex-col md:flex-row w-full p-0 md:px-[5%] pb-[3%] relative">
       {/* Columna Izquierda */}
-      <div className="w-full md:w-1/2 py-8 pr-8">
+      <div className="w-full md:w-1/2 py-8 md:pr-8 px-[8%] md:px-0">
         <div className="flex flex-col w-full pr-[10%]">
           <Image
             src="/images/PriceHistory.svg"
@@ -23,11 +24,10 @@ const HmeBnner = () => {
             height={100}
             className="w-full"
           />
-          {/* ImageCarousel visible solo en móviles */}
-          <div className="md:hidden mt-10">
-            <ImageCarousel />
-          </div>
         </div>
+        <div className="md:hidden w-screen relative left-1/2 right-1/2 mx-[-50vw] my-10">
+            <ImgCarruselIzqDer />
+          </div>
         <div className="flex flex-col md:flex-row mt-5">
           {/* Columna Izquierda del Flex Interno */}
           <div className="w-full md:w-1/2">
@@ -107,21 +107,22 @@ const HmeBnner = () => {
               Community-Driven
             </h2>
             <p className="font-satoshi-regular pt-4 text-[1rem] text-[#000] md:pl-[15%] text-justify">
-              Users can influence the platform’s direction by voting on future events using a native token.
+              Users can influence the platform&apos;s direction by voting on future events using a native token.
             </p>
           </div>
         </div>
-        <div className="md:flex mt-[25%]">
-        <div className="md:hidden pt-10">
-            <ImageCarousel />
+        <div className="md:flex">
+          {/* Full width carousel for mobile */}
+          <div className="md:hidden w-screen relative left-1/2 right-1/2 mx-[-50vw] my-10">
+            <ImgCarruselDerIzq />
           </div>
           <Image
             src="/images/Roadmap.svg"
             alt="SVG Image"
             layout="fixed"
             width={50}
-            height={50}
-            className="w-[50%] h-[50%]"
+            height={150}
+            className="w-[150%] h-[50%] md:w-[50%]"
           />
         </div>
         {/* CustomTimeline visible en desktop y tablets */}
@@ -135,14 +136,12 @@ const HmeBnner = () => {
       </div>
       {/* Columna Derecha 1 */}
       <div className="hidden md:block w-full md:w-1/4 md:sticky md:top-0 h-screen">
-        <VerticalCarousel />
+        <ImgCarruselArrAbj />
       </div>
       {/* Columna Derecha 2 */}
       <div className="hidden md:block w-full md:w-1/4 md:sticky md:top-0 h-screen">
-        <VerticalCarousel2 />
+        <ImgCarruselAbjArr />
       </div>
     </div>
-  );
-};
-
-export default HmeBnner;
+  )
+}
