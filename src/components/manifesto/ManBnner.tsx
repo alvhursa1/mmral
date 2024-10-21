@@ -3,11 +3,39 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useAnimation, useInView } from 'framer-motion';
 import AnimationComponent from './AnimatedComponent';
+
+const AnimatedParagraph: React.FC<{ 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  ida: string; 
+  children: React.ReactNode 
+}> = ({  children }) => {
+  const controls = useAnimation();
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  React.useEffect(() => {
+    if (isInView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [controls, isInView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={controls}
+      transition={{ duration: 2 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const ManBnner = () => {
   return (
-    <div className="flex flex-col w-full px-[5%] pt-[3%] pb-[3%]">
+    <div className="flex flex-col w-full pl-[4%] pr-[4%] pt-[3%] pb-[3%]">
       {/* Flex 1 */}
       <div className="flex w-full mb-8">
         <div className="w-full md:w-auto">
@@ -99,8 +127,8 @@ const ManBnner = () => {
         </div>
       </div>
 
-     {/* Flex 4 */}
-     <div className="flex flex-wrap w-full">
+      {/* Flex 4 */}
+      <div className="flex flex-wrap w-full">
         {/* Columna 1 */}
         <div className="w-full md:w-1/5 p-4"></div>
         {/* Columna 2 */}
@@ -108,10 +136,10 @@ const ManBnner = () => {
         {/* Columna 3 */}
         <div className="w-full md:w-1/5 p-4">
           <p className="font-satoshi-regular text-[1rem] text-justify">
-          The decline of traditional mainstream media and the rise of social media is largely driven by the popularity of short, viral content formats, particularly memes. 
+            The decline of traditional mainstream media and the rise of social media is largely driven by the popularity of short, viral content formats, particularly memes.
             <br />
             <br />
-These bite-sized, highly shareable pieces of media cater to shrinking attention spans and the desire for quick, easily digestible information. 
+            These bite-sized, highly shareable pieces of media cater to shrinking attention spans and the desire for quick, easily digestible information.
           </p>
         </div>
         {/* Columna 4 */}
@@ -129,24 +157,24 @@ These bite-sized, highly shareable pieces of media cater to shrinking attention 
         </div>
         {/* Columna 5 */}
         <div className="w-full md:w-1/5 p-4 flex items-center justify-center">
-        <p className="font-satoshi-regular text-[1rem] text-justify">
-        As users increasingly prefer to consume and share these compact, impactful content pieces, traditional media outlets struggle to compete with the immediacy, relatability, and virality of meme culture, leading to a shift in how information is disseminated and consumed in the digital age. Memes are distilled units of public discourse. 
+          <p className="font-satoshi-regular text-[1rem] text-justify">
+            As users increasingly prefer to consume and share these compact, impactful content pieces, traditional media outlets struggle to compete with the immediacy, relatability, and virality of meme culture, leading to a shift in how information is disseminated and consumed in the digital age. Memes are distilled units of public discourse.
             <br />
             <br />
-And now people can own an NFT of a meme.
+            And now people can own an NFT of a meme.
           </p>
         </div>
       </div>
 
-     {/* Flex 5 */}
-     <div className="flex flex-wrap w-full">
+      {/* Flex 5 */}
+      <div className="flex flex-wrap w-full">
         {/* Columna 1 */}
         <div className="w-full md:w-1/5 p-4"></div>
         {/* Columna 2 */}
         <div className="w-full md:w-1/5 p-4">
-        <span className="font-satoshi-bold text-[1.125rem]">But it’s just a silly pic?!</span>
+          <span className="font-satoshi-bold text-[1.125rem]">But it&apos;s just a silly pic?!</span>
           <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
-          Yes, but a pic is worth a 1000 words!
+            Yes, but a pic is worth a 1000 words!
             <br />
             <br />
             Decrease of attention span - increase of input bandwidth
@@ -166,8 +194,349 @@ And now people can own an NFT of a meme.
 
         </div>
       </div>
+      <AnimationComponent />
+      {/* Flex 6 */}
+      <div className="flex flex-wrap w-full">
+        {/* Columna 1 */}
+        <div className="w-full md:w-1/5 p-4">
+          <span className="font-satoshi-bold text-[1.125rem]">(MEME)ORIAL</span>
+          <AnimatedParagraph ida="parrf1">
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              Leveraging Collective Knowledge
+              <br />
+              Unlike many NFT collections that rely on novel, often abstract concepts, Meme-orial Gallery taps into the vast reservoir of shared human knowledge and experience.
+              <br />
+              This unique approach offers several key advantages:
+            </p>
+          </AnimatedParagraph>
+        </div>
+        {/* Columna 2 */}
+        <div className="w-full md:w-1/5 p-4">
+          <AnimatedParagraph ida="parrf2">
+            <span
+              id="parrf1"
+              className="font-satoshi-bold text-[1.125rem] bg-gradient-to-r from-[#E719C9] to-[#FF3E5A] text-transparent bg-clip-text"
+            >
+              1.Immediate <br />
+              Recognition
+            </span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              Each NFT in our collection represents a moment that is instantly recognizable to a broad audience. For example, the assassination of John F. Kennedy is a universally known event that requires no explanation, unlike a Bored Ape Yacht Club NFT that might necessitate research to understand its value.
+            </p>
+          </AnimatedParagraph>
+        </div>
+        {/* Columna 3 */}
+        <div className="w-full md:w-1/5 p-4">
 
-        <AnimationComponent />
+        </div>
+        {/* Columna 4 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 5 */}
+        <div className="w-full md:w-1/5 p-4 flex items-center justify-center">
+
+
+
+        </div>
+      </div>
+
+      {/* Flex 7 */}
+      <div className="flex flex-wrap w-full -mt-[10%]">
+        {/* Columna 1 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 2 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 3 */}
+        <div className="w-full md:w-1/5 p-4">
+          <AnimatedParagraph ida="parrf3">
+            <span
+              id="parrf2"
+              className="font-satoshi-bold text-[1.125rem] bg-gradient-to-r from-[#FF3E5A] to-[#E719C9] text-transparent bg-clip-text"
+            >
+              2. Added information value
+            </span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              Each NFT meme contains a recognizable element (in pink), that gives additional information on the event. In the case of the Moon landing, the cameraman reflected in the astronaut&apos;s helmet signals the &quot;possibility&quot; that the whole thing was staged, hence it&apos;s a reference to the conspiracy theories that surround the moon landing.
+            </p>
+          </AnimatedParagraph>
+        </div>
+        {/* Columna 4 */}
+        <div className="w-full md:w-1/5 p-4">
+          <AnimatedParagraph ida="parrf4">
+            <span
+              id="parrf3"
+              className="font-satoshi-bold text-[1.125rem] bg-gradient-to-r from-[#FF3E5A] to-[#E719C9] text-transparent bg-clip-text"
+            >
+              3. Added artistic value
+            </span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              The historical context of each NFT adds an educational dimension, potentially increasing their perceived value in academic and cultural circles.
+            </p>
+          </AnimatedParagraph>
+        </div>
+        {/* Columna 5 */}
+        <div className="w-full md:w-1/5 p-4 flex items-center justify-center">
+
+        </div>
+      </div>
+
+      {/* Flex 8 */}
+      <div className="flex flex-wrap w-full -mt-[10%]">
+        {/* Columna 1 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 2 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 3 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 4 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 5 */}
+        <div className="w-full md:w-1/5 p-4">
+          <AnimatedParagraph ida="parrf5">
+            <span
+              id="parrf4"
+              className="font-satoshi-bold text-[1.125rem] bg-gradient-to-r from-[#FF3E5A] to-[#E719C9] text-transparent bg-clip-text"
+            >
+              4.Emotional and Nostalgic Value
+            </span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              Investors may be drawn to NFTs representing events they lived through or that hold personal significance, adding an emotional driver to the investment.
+            </p>
+          </AnimatedParagraph>
+        </div>
+      </div>
+
+      {/* Flex 9  */}
+      <div className="flex flex-wrap w-full -mt-[5%]">
+        {/* Columna 1 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 2 */}
+        <div className="w-full md:w-1/5 p-4">
+          <AnimatedParagraph ida="parrf6">
+            <span
+              id="parrf5"
+              className="font-satoshi-bold text-[1.125rem] bg-gradient-to-r from-[#FF3E5A] to-[#E719C9] text-transparent bg-clip-text"
+            >
+              5. Lower Barrier to Entry
+            </span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              The familiarity of the subject matter makes our NFTs more accessible to a wider range of potential collectors, including those who may be new to the NFT space but are drawn to historical content.
+            </p>
+          </AnimatedParagraph>
+        </div>
+        {/* Columna 3 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 4 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 5 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+      </div>
+
+      {/* Flex 10 */}
+      <div className="flex flex-wrap w-full -mt-[5%]">
+        {/* Columna 1 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 2 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 3 */}
+        <div className="w-full md:w-1/5 p-4">
+          <AnimatedParagraph ida="parrf7">
+            <span
+              id="parrf6"
+              className="font-satoshi-bold text-[1.125rem] bg-gradient-to-r from-[#FF3E5A] to-[#E719C9] text-transparent bg-clip-text"
+            >
+              6. Cross-Generational Appeal
+            </span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              By capturing significant moments from various eras, our collection has the potential to attract collectors across different age groups, from digital natives to traditional art collectors interested in historical memorabilia.
+            </p>
+          </AnimatedParagraph>
+        </div>
+        {/* Columna 4 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 5 */}
+        <div className="w-full md:w-1/5 p-4 -mt-[3%]">
+          <AnimatedParagraph ida="parrf8">
+            <span
+              id="parrf8"
+              className="font-satoshi-bold text-[1.125rem] bg-gradient-to-r from-[#FF3E5A] to-[#E719C9] text-transparent bg-clip-text"
+            >
+              8.  Relevance Across Time
+            </span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              Unlike trend-based NFTs that may lose relevance, historical moments maintain their significance.
+            </p>
+          </AnimatedParagraph>
+        </div>
+      </div>
+
+      {/* Flex 11 */}
+      <div className="flex flex-wrap w-full -mt-[10%]">
+        {/* Columna 1 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 2 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 3 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 4 */}
+        <div className="w-full md:w-1/5 p-4">
+          <AnimatedParagraph ida="parrf9">
+            <span
+              id="parrf7"
+              className="font-satoshi-bold text-[1.125rem] bg-gradient-to-r from-[#FF3E5A] to-[#E719C9] text-transparent bg-clip-text"
+            >
+              7. Educational Value
+            </span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              The historical context of each NFT adds an educational dimension, potentially increasing their perceived value in academic and cultural circles.
+            </p>
+          </AnimatedParagraph>
+        </div>
+        {/* Columna 5 */}
+        <div className="w-full md:w-1/5 p-4 -mt-[3%]">
+        </div>
+      </div>
+
+      {/* Flex 12 */}
+      <div className="flex flex-wrap w-full ">
+        {/* Columna 1 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 2 */}
+        <div className="w-full md:w-1/5 p-4">
+          <AnimatedParagraph ida="parrf10">
+            <span
+              id="parrf9"
+              className="font-satoshi-bold text-[1.125rem] bg-gradient-to-r from-[#FF3E5A] to-[#E719C9] text-transparent bg-clip-text"
+            >
+              9.  Bridge Between Traditional and Digital
+            </span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              Our collection serves as a bridge between traditional historical artifacts and the digital realm, potentially attracting both conventional collectors and crypto enthusiasts.
+            </p>
+          </AnimatedParagraph>
+        </div>
+        {/* Columna 3 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 4 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 5 */}
+        <div className="w-full md:w-1/5 p-4 -mt-[3%]">
+        </div>
+      </div>
+
+      {/* Flex 13 */}
+      <div className="flex flex-wrap w-full -mt-[10%]">
+        {/* Columna 1 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 2 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 3 */}
+        <div className="w-full md:w-1/5 p-4">
+          <AnimatedParagraph ida="parrf11">
+            <span
+              id="parrf10"
+              className="font-satoshi-bold text-[1.125rem] bg-gradient-to-r from-[#FF3E5A] to-[#E719C9] text-transparent bg-clip-text"
+            >
+              10.  Reduced Risk
+            </span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              The inherent value derived from historical significance reduces the purely speculative nature often associated with NFTs.
+            </p>
+          </AnimatedParagraph>
+        </div>
+        {/* Columna 4 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 5 */}
+        <div className="w-full md:w-1/5 p-4 -mt-[3%]">
+        </div>
+      </div>
+
+      {/* Flex 14 */}
+      <div className="flex flex-wrap w-full mt-[8%]">
+        {/* Columna 1 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 2 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 3 */}
+        <div className="w-full md:w-1/5 p-4">
+
+        </div>
+        {/* Columna 4 */}
+        <div className="w-full md:w-1/5 p-4">
+          <AnimatedParagraph ida="parrf7">
+            <span className="font-satoshi-bold text-[1.125rem]">(TL:DR)</span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              In conclusion, by grounding our NFT collection in the collective consciousness of human history, we create a unique value proposition in the NFT space. <br />
+
+              This approach not only differentiates Meme-orial <br />
+
+              Gallery from other collections but also provides a solid foundation for long-term potential, appealing to a wide range of individuals and institutions who appreciate the combination of historical significance and digital innovation.
+            </p>
+          </AnimatedParagraph>
+        </div>
+        {/* Columna 5 */}
+        <div className="w-full md:w-1/5 p-4">
+          <AnimatedParagraph ida="parrf8">
+          <span className="font-satoshi-bold text-[1.125rem]">&nbsp;</span>
+            <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+              Meme-orial Gallery represents a unique intersection of historical preservation, modern media consumption trends, and blockchain technology. <br />
+
+              By capturing history in a format that resonates with digital natives, we&apos;re not just creating a valuable product – we&apos;re shaping how future generations will understand and interact with the past. <br />
+
+              This NFT collection offers a compelling opportunity in the rapidly evolving digital asset space while also serving a broader cultural and educational purpose.
+            </p>
+          </AnimatedParagraph>
+        </div>
+      </div>
 
     </div>
   );
