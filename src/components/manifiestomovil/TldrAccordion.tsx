@@ -30,7 +30,7 @@ const TldrAccordion = () => {
               leaveFrom="transform scale-100 opacity-100"
               leaveTo="transform scale-95 opacity-0"
             >
-              <Disclosure.Panel className="px-4 pb-4 font-satoshi-regular text-[1rem] text-justify overflow-hidden transition-all duration-300 ease-in-out">
+              <Disclosure.Panel className="px-4 pb-4 font-satoshi-regular text-[1.125rem] text-justify overflow-hidden transition-all duration-300 ease-in-out">
                 <p className="mb-4">
                   In conclusion, by grounding our NFT collection in the collective consciousness of human history, we create a unique value proposition in the NFT space.
                 </p>

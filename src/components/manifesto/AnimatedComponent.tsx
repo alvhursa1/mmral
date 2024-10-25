@@ -66,7 +66,7 @@ const AnimatedComponent: React.FC = () => {
           className="text-xl"
         >
           <span className="font-satoshi-bold text-[1.125rem]">NFT explanation</span>
-          <p className="font-satoshi-regular text-[1rem] text-justify">
+          <p className="font-satoshi-regular text-[1.125rem] text-justify">
             The title of the meme tries to represent both the notable event and the broader sociological context of it.
             <br />
             <br />
@@ -93,7 +93,7 @@ const AnimatedComponent: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="ml-[40%] " // Separación
         >
-          <p className="font-satoshi-regular text-[1rem] text-justify mt-4">
+          <p className="font-satoshi-regular text-[1.125rem] text-justify mt-4">
             The violet element in the meme relates to the extra collective information regarding the event.
             <br />
             <br />

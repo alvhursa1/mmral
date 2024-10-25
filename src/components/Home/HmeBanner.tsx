@@ -15,7 +15,7 @@ export default function HmeBnner() {
     <div className="flex flex-col md:flex-row w-full p-0 md:px-[5%] pb-[3%] relative">
       {/* Columna Izquierda */}
       <div className="w-full md:w-1/2 py-8 md:pr-8 px-[8%] md:px-0">
-        <div className="flex flex-col w-full pr-[10%]">
+        <div className="flex flex-col w-full -ml-[5%] pr-[10%] ">
           <Image
             src="/images/PriceHistory.svg"
             alt="Price History"
@@ -31,7 +31,7 @@ export default function HmeBnner() {
         <div className="flex flex-col md:flex-row mt-5">
           {/* Columna Izquierda del Flex Interno */}
           <div className="w-full md:w-1/2">
-            <p className="font-satoshi-regular text-[1rem] text-justify mt-8">
+            <p className="font-satoshi-regular text-[1.125rem] text-justify mt-8">
               <span className="font-satoshi-bold">(MEME)ORIAL</span> lets you collect iconic images from the past and present, turning them into exclusive NFTs.
               <br />
               <br />
@@ -52,10 +52,10 @@ export default function HmeBnner() {
         {/* Flex Secundario 2 para los botones */}
         <div className="flex flex-col md:flex-row mt-5 space-y-4 md:space-y-0 md:space-x-4">
           <Link href="/buy" className="block w-full py-6 text-center text-[1rem] font-satoshi-medium text-white bg-gradient-to-r from-[#FF3E5A] to-[#E515D7] rounded-full shadow-md transition-all duration-200 ease-in-out transform hover:bg-none hover:text-[#E515D7] hover:border hover:border-[#FF3E5A] hover:shadow-lg hover:scale-105">
-            BUY THE COLLECTION
+            SEE THE COLLECTION
           </Link>
           <Link href="/manifesto" className="block w-full py-6 text-center text-[1rem] font-satoshi-medium text-[#E515D7] bg-white border border-[#FF3E5A] rounded-full shadow-md transition-all duration-200 ease-in-out transform hover:bg-gradient-to-r hover:from-[#FF3E5A] hover:to-[#E515D7] hover:text-white hover:shadow-lg hover:scale-105">
-            READ THE MANIFESTO
+            THE CONCEPT
           </Link>
         </div>
         {/* Flex 4 para la imagen SVG */}
@@ -74,19 +74,20 @@ export default function HmeBnner() {
           {/* Columna Izquierda del Flex 5 */}
           <div className="w-full md:w-1/2 sm:mb-10">
             <h2 className="font-satoshi-medium text-[1.125rem] text-[#FF3E5A]">
-              Neutral Standpoint.
+            Neutral observer
             </h2>
-            <p className="font-satoshi-regular pt-4 pb-6 text-[1rem] text-[#000] md:pl-[15%] text-justify">
-              The project positions itself as a neutral market maker, presenting events with the objectivity of a history book.
+            <p className="font-satoshi-regular pt-4 pb-6 text-[1.125rem] text-[#000] md:pl-[15%] text-justify">
+            The project positions itself as a neutral observer of the zeitgeist, presenting events with the objectivity of a history book and context of broader social vibe.
             </p>
           </div>
           {/* Columna Derecha del Flex 5 */}
           <div className="w-full md:w-1/2 sm:mt-4 md:mt-0">
             <h2 className="font-satoshi-medium text-[1.125rem] text-[#FF3E5A]">
-              Dynamic Market
+            Virality as the new measure
+
             </h2>
-            <p className="font-satoshi-regular pt-4 pb-6 text-[1rem] text-[#000] md:pl-[15%] text-justify">
-              Releases NFTs in phases to create a dynamic market driven by demand and rarity.
+            <p className="font-satoshi-regular pt-4 pb-6 text-[1.125rem] text-[#000] md:pl-[15%] text-justify">
+            Mainstream Media are no longer relevant. They can’t force public opinion as they once could. Manufacturing consent doesn’t work with the same mouthpieces as in the last century.
             </p>
           </div>
         </div>
@@ -95,20 +96,15 @@ export default function HmeBnner() {
           {/* Columna Izquierda del Flex 6 */}
           <div className="w-full md:w-1/2 sm:mb-10">
             <h2 className="font-satoshi-medium text-[1.125rem] text-[#FF3E5A]">
-              Cross-Generational Appeal
+            The meme you already know
             </h2>
-            <p className="font-satoshi-regular pt-4 pb-6 text-[1rem] text-[#000] md:pl-[15%] text-justify">
-              By capturing significant moments from various eras, our collection has the potential to attract collectors.
+            <p className="font-satoshi-regular pt-4 pb-6 text-[1.125rem] text-[#000] md:pl-[15%] text-justify">
+            By capturing significant moments from various eras and also the current events, our memes are immediately recognizable. No need for explanation what is what, why something has value or what is the silly pic of an animal with an (expensive) price tag.
             </p>
           </div>
           {/* Columna Derecha del Flex 6 */}
           <div className="w-full md:w-1/2 sm:mt-4 md:mt-0">
-            <h2 className="font-satoshi-medium text-[1.125rem] text-[#FF3E5A]">
-              Community-Driven
-            </h2>
-            <p className="font-satoshi-regular pt-4 text-[1rem] text-[#000] md:pl-[15%] text-justify">
-              Users can influence the platform&apos;s direction by voting on future events using a native token.
-            </p>
+
           </div>
         </div>
         <div className="md:flex">
@@ -122,7 +118,7 @@ export default function HmeBnner() {
             layout="fixed"
             width={50}
             height={150}
-            className="w-[150%] h-[50%] md:w-[50%]"
+            className="w-[150%] h-[50%] md:w-[50%] -ml-2"
           />
         </div>
         {/* CustomTimeline visible en desktop y tablets */}

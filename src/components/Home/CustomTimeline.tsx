@@ -70,16 +70,16 @@ export default function CustomTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <h2 className="font-satoshi-medium text-[1.125rem] text-[#FF3E5A]">
-            Community-Driven
+          Curator Driven
           </h2>
           <motion.p
             ref={ref1} // Referencia para rastrear
-            className="font-satoshi-regular pt-4 text-[1rem] text-[#000]  text-justify"
+            className="font-satoshi-regular pt-4 text-[1.125rem] text-[#000]  text-justify"
             initial={{ opacity: 0, y: 20 }} // Estado inicial
             animate={hasBeenViewed1 ? { opacity: 1, y: 0 } : {}} // Animación solo si está en vista
             transition={{ duration: 1 }} // Duración de la animación
           >
-            Users can influence the platform’s direction by voting on future events using a native token.
+            Our publishing process is guided by experienced curators who carefully select and approve each submission to ensure it meets our quality and artistic standards. This guarantees that every NFT we publish resonates with our community and maintains the integrity of our platform.
           </motion.p>
         </TimelineContent>
       </TimelineItem>
@@ -99,16 +99,16 @@ export default function CustomTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <h2 className="font-satoshi-medium text-[1.125rem] text-[#FF3E5A]">
-            Community-Driven
+          Instant Reaction on Viral Events
           </h2>
           <motion.p
             ref={ref2}
-            className="font-satoshi-regular pt-4 text-[1rem] text-[#000] text-justify"
+            className="font-satoshi-regular pt-4 text-[1.125rem] text-[#000] text-justify"
             initial={{ opacity: 0, y: 20 }}
             animate={hasBeenViewed2 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            Users can influence the platform’s direction by voting on future events using a native token.
+            We swiftly respond to trending viral moments by creating and publishing NFTs that capture these events in real-time. This ensures that our collection stays current and allows you to own a piece of history as it happens, reflecting the dynamic nature of the digital world.
           </motion.p>
         </TimelineContent>
       </TimelineItem>
@@ -128,16 +128,16 @@ export default function CustomTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <h2 className="font-satoshi-medium text-[1.125rem] text-[#FF3E5A]">
-            Community-Driven
+          Open to Suggestions:
           </h2>
           <motion.p
             ref={ref3}
-            className="font-satoshi-regular pt-4 text-[1rem] text-[#000] md:  text-justify"
+            className="font-satoshi-regular pt-4 text-[1.125rem] text-[#000] md:  text-justify"
             initial={{ opacity: 0, y: 20 }}
             animate={hasBeenViewed3 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            Users can influence the platform’s direction by voting on future events using a native token.
+            We invite individuals to actively participate by suggesting historical events they'd like us to publish and sharing their own design ideas. Your input helps shape our NFT collection, ensuring it reflects the interests and creativity of our community, and makes the publishing process more collaborative and inclusive.
           </motion.p>
         </TimelineContent>
       </TimelineItem>
@@ -157,43 +157,20 @@ export default function CustomTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <h2 className="font-satoshi-medium text-[1.125rem] text-[#FF3E5A]">
-            Community-Driven
+          Let the Market Decide
           </h2>
           <motion.p
             ref={ref4}
-            className="font-satoshi-regular pt-4 text-[1rem] text-[#000]  text-justify"
+            className="font-satoshi-regular pt-4 text-[1.125rem] text-[#000]  text-justify"
             initial={{ opacity: 0, y: 20 }}
             animate={hasBeenViewed4 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            Users can influence the platform’s direction by voting on future events using a native token.
+            We empower the community to determine the value of each NFT by allowing open bidding and trading. By releasing NFTs representing significant historical events, we let market dynamics establish their price point, reflecting the collective wisdom of crowds how the society prices a historical event.
           </motion.p>
         </TimelineContent>
       </TimelineItem>
 
-      <TimelineItem position="left">
-        <TimelineSeparator>
-          <TimelineDot
-            sx={{
-              background: 'linear-gradient(0deg, #FF3E5A 0%, #E515D7 100%)',
-            }}
-          />
-        </TimelineSeparator>
-        <TimelineContent>
-          <h2 className="font-satoshi-medium text-[1.125rem] text-[#FF3E5A]">
-            Community-Driven
-          </h2>
-          <motion.p
-            ref={ref5}
-            className="font-satoshi-regular pt-4 text-[1rem] text-[#000]  text-justify"
-            initial={{ opacity: 0, y: 20 }}
-            animate={hasBeenViewed5 ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1 }}
-          >
-            Users can influence the platform’s direction by voting on future events using a native token.
-          </motion.p>
-        </TimelineContent>
-      </TimelineItem>
     </Timeline>
   );
 }
