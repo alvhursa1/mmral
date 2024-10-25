@@ -137,7 +137,7 @@ export default function CustomTimeline() {
             animate={hasBeenViewed3 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            We invite individuals to actively participate by suggesting historical events they'd like us to publish and sharing their own design ideas. Your input helps shape our NFT collection, ensuring it reflects the interests and creativity of our community, and makes the publishing process more collaborative and inclusive.
+            We invite individuals to actively participate by suggesting historical events they&apos;d like us to publish and sharing their own design ideas. Your input helps shape our NFT collection, ensuring it reflects the interests and creativity of our community, and makes the publishing process more collaborative and inclusive.
           </motion.p>
         </TimelineContent>
       </TimelineItem>

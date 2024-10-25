@@ -39,7 +39,7 @@ const CarouselImage = React.memo(({ image, containerWidth, isLoaded, onLoad, onE
 
   return (
     <div 
-      className="flex-shrink-0 flex items-center justify-center"
+      className="flex-shrink-0 flex items-center justify-center mb-2" // Changed mb-1 to mb-2 for 0.5rem gap
       style={{ width: `${containerWidth}px`, height: `${imageHeight}px` }}
     >
       <div className="relative w-full h-full">
@@ -104,14 +104,15 @@ const ImgCarruselAbjArr: React.FC = () => {
   const startAnimation = useCallback(() => {
     if (combinedImages.length > 0 && containerRef.current && containerWidth > 0) {
       const totalHeight = combinedImages.reduce((sum, img) => sum + (img.height * (containerWidth / img.width)), 0)
+      const gapHeight = (combinedImages.length - 1) * 0.5 // Changed from 0.25 to 0.5 for 0.5rem gap
 
       controls.start({
-        y: [-totalHeight, 0],
+        y: [-(totalHeight + gapHeight * 16), 0], // Convert rem to pixels (assuming 1rem = 16px)
         transition: {
           y: {
             repeat: Infinity,
             repeatType: "loop",
-            duration: totalHeight / 50,
+            duration: (totalHeight + gapHeight * 16) / 50, // Adjusted for larger gaps
             ease: "linear",
           },
         },
@@ -126,7 +127,7 @@ const ImgCarruselAbjArr: React.FC = () => {
   return (
     <div ref={containerRef} className="hidden sm:block h-screen w-full overflow-hidden pointer-events-none">
       <motion.div
-        className="flex flex-col"
+        className="flex flex-col space-y-2" // Changed space-y-1 to space-y-2 for 0.5rem gap
         animate={controls}
         style={{ willChange: 'transform' }}
       >

@@ -39,7 +39,7 @@ const CarouselImage: React.FC<{
 
   return (
     <div 
-      className="flex-shrink-0 flex items-center justify-center"
+      className="flex-shrink-0 flex items-center justify-center mb-2" // Added mb-2 for 0.5rem gap
       style={{ width: `${containerWidth}px`, height: `${imageHeight}px` }}
     >
       <div className="relative w-full h-full">
@@ -104,14 +104,15 @@ const ImgCarruselArrAbj: React.FC = () => {
   const startAnimation = useCallback(() => {
     if (combinedImages.length > 0 && containerRef.current && containerWidth > 0) {
       const totalHeight = combinedImages.reduce((sum, img) => sum + (img.height * (containerWidth / img.width)), 0)
+      const gapHeight = (combinedImages.length - 1) * 8 // 0.5rem = 8px
 
       controls.start({
-        y: [0, -totalHeight],
+        y: [0, -(totalHeight + gapHeight)],
         transition: {
           y: {
             repeat: Infinity,
             repeatType: "loop",
-            duration: totalHeight / 50, // Ajustado para una velocidad más apropiada
+            duration: (totalHeight + gapHeight) / 50, // Adjusted for gaps
             ease: "linear",
           },
         },
@@ -126,7 +127,7 @@ const ImgCarruselArrAbj: React.FC = () => {
   return (
     <div ref={containerRef} className="hidden sm:block h-screen w-full overflow-hidden pointer-events-none">
       <motion.div
-        className="flex flex-col"
+        className="flex flex-col space-y-2" // Added space-y-2 for 0.5rem gap
         animate={controls}
         style={{ willChange: 'transform' }}
       >

@@ -100,7 +100,7 @@ export default function RightPositionedTimeline() {
             Open to Suggestions:
           </h2>
           <p className="font-satoshi-regular pt-4 text-[1.125rem] text-[#000] text-justify">
-            We invite individuals to actively participate by suggesting historical events they'd like us to publish and sharing their own design ideas. Your input helps shape our NFT collection, ensuring it reflects the interests and creativity of our community, and makes the publishing process more collaborative and inclusive.
+            We invite individuals to actively participate by suggesting historical events they&apos;d like us to publish and sharing their own design ideas. Your input helps shape our NFT collection, ensuring it reflects the interests and creativity of our community, and makes the publishing process more collaborative and inclusive.
           </p>
         </TimelineContent>
       </TimelineItem>

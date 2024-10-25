@@ -131,11 +131,11 @@ export default function HmeBnner() {
         </div>
       </div>
       {/* Columna Derecha 1 */}
-      <div className="hidden md:block w-full md:w-1/4 md:sticky md:top-0 h-screen">
+      <div className="hidden md:block w-full md:w-1/4 md:sticky md:top-0 h-screen pr-1">
         <ImgCarruselArrAbj />
       </div>
       {/* Columna Derecha 2 */}
-      <div className="hidden md:block w-full md:w-1/4 md:sticky md:top-0 h-screen">
+      <div className="hidden md:block w-full md:w-1/4 md:sticky md:top-0 h-screen pl-1">
         <ImgCarruselAbjArr />
       </div>
     </div>
