@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
 import { datarojoweb } from '../../data/datarojoweb'
@@ -66,8 +66,9 @@ const ImgCarruselAbjArr: React.FC = () => {
   const controls = useAnimation()
   const containerRef = useRef<HTMLDivElement>(null)
   const [containerWidth, setContainerWidth] = useState<number>(0)
+  const [combinedImages, setCombinedImages] = useState<ImageData[]>([])
 
-  const combinedImages = useMemo(() => {
+  useEffect(() => {
     const shuffledRojo = shuffleArray(datarojoweb)
     const shuffledNegro = shuffleArray(datanegroweb)
     
@@ -85,7 +86,7 @@ const ImgCarruselAbjArr: React.FC = () => {
       }
     }
 
-    return combined
+    setCombinedImages(combined)
   }, [])
 
   useEffect(() => {

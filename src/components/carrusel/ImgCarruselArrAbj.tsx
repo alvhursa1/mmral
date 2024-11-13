@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
 import { datarojoweb } from '../../data/datarojoweb'
@@ -53,6 +53,7 @@ const CarouselImage: React.FC<{
           onError={onError}
           onLoad={onLoad}
           placeholder="empty"
+          style={{ width: 'auto', height: 'auto' }} // Mantener la relación de aspecto
         />
       </div>
     </div>
@@ -66,8 +67,9 @@ const ImgCarruselArrAbj: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const [containerWidth, setContainerWidth] = useState<number>(0)
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set())
+  const [combinedImages, setCombinedImages] = useState<ImageData[]>([])
 
-  const combinedImages = useMemo(() => {
+  useEffect(() => {
     const shuffledRojo = shuffleArray(datarojoweb)
     const shuffledNegro = shuffleArray(datanegroweb)
     
@@ -85,7 +87,7 @@ const ImgCarruselArrAbj: React.FC = () => {
       }
     }
 
-    return combined
+    setCombinedImages(combined)
   }, [])
 
   useEffect(() => {

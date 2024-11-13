@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "(Meme)orial",
-  description: "(Meme)orial lets you collect iconic images from the past and present, turning them into exclusive NFTs.",
+  title: "Memeorial: Price History In.",
+  description: "(MEME)ORIAL lets you collect iconic images from the past and present, turning them into exclusive NFTs. From historical landmarks to viral moments, we have something for every collector.",
 };
 
 export default function RootLayout({
@@ -26,8 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      
+      <body      
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}

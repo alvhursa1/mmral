@@ -48,7 +48,7 @@ const AnimatedComponent: React.FC = () => {
         className="relative min-w-80 h-80"
       >
         <Image
-          src="/images/rojo-w/LANDINGONHOLLYWOODSTUDIOS.webp" // Cambia esto por la ruta de tu imagen
+          src="/images/rojo-w/rojo-w9.webp" // Cambia esto por la ruta de tu imagen
           alt="Imagen central"
           layout="fill"
           objectFit="cover"

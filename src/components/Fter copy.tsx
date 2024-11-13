@@ -44,7 +44,7 @@ export default function Footer() {
       {/* Iconos de redes sociales centrados */}
       <div className="z-10 flex space-x-4">
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/memeorialart/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -58,7 +58,7 @@ export default function Footer() {
           />
         </a>
         <a
-          href="https://twitter.com"
+          href="https://x.com/Memeorialart?t=2y3O9tYiNCTyMbxx1x8yow&s=09"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Twitter"
@@ -72,7 +72,7 @@ export default function Footer() {
           />
         </a>
         <a
-          href="https://opensea.io"
+          href="https://opensea.io/collection/meme-orial-collection"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="OpenSea"

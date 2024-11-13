@@ -33,7 +33,7 @@ const ManBnner = () => {
           </p>
           <br />
           <br />
-          <Link href="/buy" className="block w-full py-6 text-center text-[1.125rem] font-satoshi-medium text-white bg-gradient-to-r from-[#FF3E5A] to-[#E515D7] rounded-full shadow-md transition-all duration-200 ease-in-out transform hover:bg-none hover:text-[#E515D7] hover:border hover:border-[#FF3E5A] hover:shadow-lg hover:scale-105 mt-4">
+          <Link href="https://opensea.io/collection/meme-orial-collection" className="block w-full py-6 text-center text-[1.125rem] font-satoshi-medium text-white bg-gradient-to-r from-[#FF3E5A] to-[#E515D7] rounded-full shadow-md transition-all duration-200 ease-in-out transform hover:bg-none hover:text-[#E515D7] hover:border hover:border-[#FF3E5A] hover:shadow-lg hover:scale-105 mt-4">
           SEE THE COLLECTION
           </Link>
         </div>
